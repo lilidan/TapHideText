@@ -10,6 +10,10 @@ class TapHideTextView: UITextView {
         
     }
     
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     var tapGr:UITapGestureRecognizer!
     func tap(){
         self.endEditing(true)
